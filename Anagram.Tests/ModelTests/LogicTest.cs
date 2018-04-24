@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System;
+//using System.Linq;
 using Anagram.Models;
 
 namespace Anagram.Tests
@@ -9,43 +10,40 @@ namespace Anagram.Tests
       public class AnagramTest
       {
       [TestMethod]
-      public void GetAnagram_ReturnSorted()
+      public void GetAnagram()
       {
       //Arrange
-      string Anagram = "Hello";
-      char[] charX = Anagram.ToCharArray();
-      Array.Sort(charX);
-      Solution newAnagram = new Solution(Anagram);
-      foreach(char letter in charX)
-      {
-        // Console.WriteLine(letter);
-        Console.WriteLine(charX);
-      }
-      //Act
-      string result = newAnagram.GetAnagram();
+      //Console.Write("Enter first word:");
+        string word1 = "hello";
+        //Console.Write("Enter second word:");
+        string word2 = "goodbye";
 
-      //Assert
-      Assert.AreEqual(charX, result);
+        //Add optional validation of input words if needed.
+        //.....
+
+        //step 1
+        char[] char1 = word1.ToLower().ToCharArray();
+        char[] char2 = word2.ToLower().ToCharArray();
+
+        //Step 2
+        Array.Sort(char1);
+        Array.Sort(char2);
+
+        //Step 3
+        string NewWord1 = new string(char1);
+        string NewWord2 = new string(char2);
+
+        //Step 4
+
+        if (NewWord1 == NewWord2)
+        {
+            Console.WriteLine("Yes! Words \"{0}\" and \"{1}\" are Anagrams", word1, word2);
+        }
+        else
+        {
+            Console.WriteLine("No! Words \"{0}\" and \"{1}\" are not Anagrams", word1, word2);
+        }
+            //Console.ReadLine();
+        }
     }
-
-
-  //   [TestMethod]
-  //   public void SplitAnagram()
-  //   {
-  //   //Arrange
-  //   string[] Anagram = {"a", "x", "c", "e"};
-  //
-  //   Solution newAnagram = new Solution(Anagram);
-  //   var sortedNames = Anagram.OrderBy(n => n);
-  //   foreach(var item in sortedNames)
-  //   {
-  //     Console.WriteLine(item);
-  //   }
-  //   //Act
-  //   string result = Anagram;
-  //
-  //   //Assert
-  //   Assert.AreEqual(result);
-  // }
-  }
 }

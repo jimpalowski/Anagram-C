@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
+    <title>Home of Anagram checker</title>
+  </head>
+  <body class="container">
+    <h1>Enter your Words</h1>
+       <hr>
+       <form action='/result' method="post">
+         <div class='form-group'>
+           <label for='anagramOne'>Word one: </label>
+           <input id='anagramOne' name='AnagramOne' class='form-control' type='text'>
+         </div>
+         <div class='form-group'>
+           <label for='anagramTwo'>Word Two: </label>
+           <input id='anagramTwo' name='anagramTwo' class='form-control' type='text'>
+         </div>
+         <button class="btn btn-primary" type='submit'>Check</button>
+       </form>
+  </body>
+</html>
